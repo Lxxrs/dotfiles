@@ -1,0 +1,26 @@
+app-id = dev.rockorager.monstar
+
+background-blur = false
+background-opacity = 0.95
+background-opacity-cells = true
+
+command = direct:fish --login
+copy-highlight-duration = 200
+
+font-family = JetBrainsMono Nerd Font
+font-size = 12.5
+
+image-storage-limit = 320000000
+inertial-scrolling = true
+
+linux-cgroup = always
+
+mouse-scroll-multiplier = precision:1,discrete:3
+
+scrollback-limit = 50000000
+
+theme = light:Catppuccin Latte,dark:Catppuccin Macchiato
+# theme = light:Rose Pine Dawn,dark:Rose Pine
+
+window-padding-x = 8
+window-padding-y = 6

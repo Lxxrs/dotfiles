@@ -7,17 +7,19 @@ so packages can be installed individually.
 
 ## What's in here
 
-| Package    | Tool                                         | Notes                                                              |
-| ---------- | -------------------------------------------- | ------------------------------------------------------------------ |
-| `fish/`    | [fish](https://fishshell.com)                | Two-line prompt, frozen theme, completions                         |
-| `ghostty/` | [Ghostty](https://ghostty.org)               | JetBrainsMono Nerd Font, Catppuccin Latte / Macchiato (auto-switch)|
-| `nvim/`    | [Neovim](https://neovim.io) 0.12+            | `vim.pack` for plugins, `vim.lsp` for language servers             |
-| `starship` | [Starship](https://starship.rs/)             | Custom Shell Prompt                                                |
+| Package    | Tool                                             | Notes                                                                                |
+| ---------- | ------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `fish/`    | [fish](https://fishshell.com)                    | Two-line prompt, frozen theme, completions                                           |
+| `ghostty/` | [Ghostty](https://ghostty.org)                   | macOS Terminal - JetBrainsMono Nerd Font, Catppuccin Latte / Macchiato (auto-switch) |
+| `monstar/` | [Monstar](https://github.com/rockorager/monstar) | Linux Terminal - JetBrainsMono Nerd Font, Catppuccin Latte / Macchiato (auto-switch) |
+| `nvim/`    | [Neovim](https://neovim.io) 0.12+                | `vim.pack` for plugins, `vim.lsp` for language servers                               |
+| `starship` | [Starship](https://starship.rs/)                 | Custom Shell Prompt                                                                  |
 
 ```sh
 dotfiles/
 ├── fish/.config/fish/
 ├── ghostty/.config/ghostty/
+├── monstar/.config/monstar/
 └── nvim/.config/nvim/
 ```
 
@@ -25,9 +27,19 @@ dotfiles/
 
 Core:
 
+macOS:
 ```sh
 brew install fastfetch fish fzf git neovim starship stow
 brew install --cask font-jetbrains-mono-nerd-font ghostty
+```
+
+Arch/CachyOS:
+```sh
+sudo pacman -S fastfetch fish fzf git neovim starship stow ttf-jetbrains-mono-nerd
+```
+
+```sh
+paru -S monstar-bin
 ```
 
 Language servers enabled in `nvim/.config/nvim/init.lua` (install only the ones you need):
@@ -60,7 +72,7 @@ pinned in `nvim/.config/nvim/nvim-pack-lock.json`.
 ```sh
 git clone https://codeberg.org/Lxrs/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-stow -vt "$HOME" fish ghostty nvim
+stow -vt "$HOME" fish ghostty monstar nvim
 ```
 
 Install a single package by naming just that one, e.g. `stow -vt "$HOME" --no-folding nvim`.
